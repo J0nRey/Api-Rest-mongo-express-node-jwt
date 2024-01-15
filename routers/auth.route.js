@@ -1,11 +1,11 @@
-import express from "express"
-import { login, register } from "../controllers/auth.controller.js"
-import {body} from "express-validator"
-import { validationResultExpress } from "../middlewares/validationResultExpress.js"
+import { login, register } from "../controllers/auth.controller.js";
+import { Router } from "express";
+import { body } from "express-validator";
+import { validationResultExpress } from "../middlewares/validationResultExpress.js";
 
-const router = express.Router()
+const router = Router()
 
-router.get('/register', 
+router.post('/register', 
     [
         body('email', 'Formato de email incorrecto')
             .trim()
